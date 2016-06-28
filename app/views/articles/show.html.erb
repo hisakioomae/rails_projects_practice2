@@ -17,3 +17,31 @@
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+
+
+<%= form_for(:comment, url:article_comments_path(@article)) do |f| %>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<p>
+  コメント一覧
+</p>
+   
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Author:</strong>
+    <%= comment.author %><br>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
