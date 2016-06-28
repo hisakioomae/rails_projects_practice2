@@ -32,3 +32,16 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<p>
+  コメント一覧
+</p>
+   
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Author:</strong>
+    <%= comment.author %><br>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
