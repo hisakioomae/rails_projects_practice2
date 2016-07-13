@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title , class:"control-label"%><br>
+    <%= f.text_field :title , class:"form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
+  <div class="form-group">
+    <%= f.label :body , class:"control-label"%><br>
+    <%= f.text_field :body , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+  <div class="form-group">
+    <%= f.label :author , class:"control-label" %><br>
+    <%= f.text_field :author, class:"form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "submit" , class: "btn btn-primary"%>
   </div>
 <% end %>
