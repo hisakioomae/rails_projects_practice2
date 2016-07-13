@@ -1,3 +1,4 @@
+<div class="col-md-3 col-md-offset-1">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,21 +16,21 @@
   <%= @article.author %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article), class: "btn btn-success" %> |
+<%= link_to 'Back', articles_path,class:"btn btn-warning" %>
 
 
 <%= form_for(:comment, url:article_comments_path(@article)) do |f| %>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+  <div class="form-group">
+    <%= f.label :author , class: "control-label"%><br>
+    <%= f.text_field :author, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
+  <div class="form-group">
+    <%= f.label :body , class: "control-label"%><br>
+    <%= f.text_field :body , class: "form-control"%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit 'submit' , class:"btn btn-primary"%>
   </div>
 <% end %>
 
@@ -37,11 +38,13 @@
   コメント一覧
 </p>
    
-<% @article.comments.each do |comment| %>
+<% @article.comments.each { |comment| %>
   <p>
     <strong>Author:</strong>
     <%= comment.author %><br>
     <strong>Body:</strong>
     <%= comment.body %>
   </p>
-<% end %>
+<% } %>
+</div>
+
