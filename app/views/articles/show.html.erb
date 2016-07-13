@@ -37,11 +37,11 @@
   コメント一覧
 </p>
    
-<% @article.comments.each do |comment| %>
+<% @article.comments.each { |comment| %>
   <p>
     <strong>Author:</strong>
     <%= comment.author %><br>
     <strong>Body:</strong>
     <%= comment.body %>
   </p>
-<% end %>
+<% } %>
